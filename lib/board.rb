@@ -50,11 +50,11 @@ class Board
    end
 
    def valid_move?(input)
-     if input.to_i == 1..9
-        true
-     else
-       false
-     end
+     if input.to_i.between?(1,9) && self.taken?(input) == false
+      true
+    else
+      false
+    end
    end
 
    def update(position, player)
